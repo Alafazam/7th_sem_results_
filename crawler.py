@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 import json
 import re
 
-# this files crawles all the our semester results.
+# this files crawles our 7th semester result.
 
 
 
