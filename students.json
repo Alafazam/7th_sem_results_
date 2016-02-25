@@ -1,0 +1,205 @@
+{
+    "students": [
+	    {
+	        "rollno": 2,
+	        "name": "MEHREEN JABEEN"
+	    }, {
+	        "rollno": 4,
+	        "name": "ADIL HUSSAN"
+	    }, {
+	        "rollno": 22,
+	        "name": "MOHAMMAD ASLAM"
+	    }, {
+	        "rollno": 67,
+	        "name": "KETAN KUMAR"
+	    }, {
+	        "rollno": 74,
+	        "name": "SIBGAT ALLAH"
+	    }, {
+	        "rollno": 77,
+	        "name": "OMAIS SHAFI"
+	    }, {
+	        "rollno": 101,
+	        "name": "WASEEM AKRAM"
+	    }, {
+	        "rollno": 113,
+	        "name": "JASWINDER SINGH"
+	    }, {
+	        "rollno": 144,
+	        "name": "MEENU"
+	    }, {
+	        "rollno": 175,
+	        "name": "ARVIND YADAV"
+	    }, {
+	        "rollno": 203,
+	        "name": "MOHAMMAD MUJTAHID"
+	    }, {
+	        "rollno": 206,
+	        "name": "RAVESA AKHTER"
+	    }, {
+	        "rollno": 227,
+	        "name": "FAROOQ AH"
+	    }, {
+	        "rollno": 231,
+	        "name": "AAQIB AHMAD"
+	    }, {
+	        "rollno": 242,
+	        "name": "TARIQ BASHIR"
+	    }, {
+	        "rollno": 245,
+	        "name": "NASIR BASHIR"
+	    }, {
+	        "rollno": 274,
+	        "name": "ADITYA GUPTA"
+	    }, {
+	        "rollno": 277,
+	        "name": "RAMKARAN YADAV"
+	    }, {
+	        "rollno": 305,
+	        "name": "AMAN GUPTA"
+	    }, {
+	        "rollno": 318,
+	        "name": "RAHUL JIJ"
+	    }, {
+	        "rollno": 333,
+	        "name": "IRAQ AHMAD"
+	    }, {
+	        "rollno": 354,
+	        "name": "SYED MUJADID"
+	    }, {
+	        "rollno": 387,
+	        "name": "ARVIND KUMAR"
+	    }, {
+	        "rollno": 390,
+	        "name": "ROHAN DUSSA"
+	    }, {
+	        "rollno": 393,
+	        "name": "ANAV GUPTA"
+	    }, {
+	        "rollno": 394,
+	        "name": "MOHAMAD WASEEM"
+	    }, {
+	        "rollno": 399,
+	        "name": "RAJU ANDOTRA"
+	    }, {
+	        "rollno": 417,
+	        "name": "PAYAL GORKA"
+	    }, {
+	        "rollno": 424,
+	        "name": "HRISHABH GOKHRU"
+	    }, {
+	        "rollno": 451,
+	        "name": "AISHWARYUMESH"
+	    }, {
+	        "rollno": 459,
+	        "name": "MANVENDRA SINGH"
+	    }, {
+	        "rollno": 472,
+	        "name": "P.MAHENDAR"
+	    }, {
+	        "rollno": 474,
+	        "name": "TANUSHREE"
+	    }, {
+	        "rollno": 491,
+	        "name": "RAHUL KUMAR"
+	    }, {
+	        "rollno": 492,
+	        "name": "AKSHAY DWIVEDI"
+	    }, {
+	        "rollno": 495,
+	        "name": "HETRAM MEENA"
+	    }, {
+	        "rollno": 509,
+	        "name": "TARUN KUMAR"
+	    }, {
+	        "rollno": 520,
+	        "name": "RITVIK TIWARI"
+	    }, {
+	        "rollno": 532,
+	        "name": "PRABHAT DAYAL"
+	    }, {
+	        "rollno": 541,
+	        "name": "SHUBHANG SHARMA"
+	    }, {
+	        "rollno": 552,
+	        "name": "ALAF AZAM"
+	    }, {
+	        "rollno": 561,
+	        "name": "PRATEEK PAGARIA"
+	    }, {
+	        "rollno": 574,
+	        "name": "MUDITA SINGH"
+	    }, {
+	        "rollno": 576,
+	        "name": "RAHUL PANDEY"
+	    }, {
+	        "rollno": 580,
+	        "name": "GULSHAN KUMAR"
+	    }, {
+	        "rollno": 581,
+	        "name": "ROHIT RANJAN"
+	    }, {
+	        "rollno": 582,
+	        "name": "SHUBHAM GOYAL"
+	    }, {
+	        "rollno": 583,
+	        "name": "VISHAL CHAUDHARY"
+	    }, {
+	        "rollno": 584,
+	        "name": "ROHIT RAVI"
+	    }, {
+	        "rollno": 592,
+	        "name": "AYUSH KARNA"
+	    }, {
+	        "rollno": 605,
+	        "name": "LAKHAN LAL"
+	    }
+    ],
+    "subjects": [
+	    {
+	        "url": "index.php?Link=Result Search&item=abcdaa459hkfg",
+	        "subject": "Seminar",
+	        "credit": 1
+	    }, {
+	        "url": "index.php?Link=Result Search&item=abcdaa458hkfg",
+	        "subject": "Pre_Project",
+	        "credit": 3
+	    }, {
+	        "url": "index.php?Link=Result Search&item=abcdaa457hkfg",
+	        "subject": "WMC",
+	        "credit": 4
+	    }, {
+	        "url": "index.php?Link=Result Search&item=abcdaa456hkfg",
+	        "subject": "WMC_Lab",
+	        "credit": 1
+	    }, {
+	        "url": "index.php?Link=Result Search&item=abcdaa455hkfg",
+	        "subject": "IS",
+	        "credit": 4
+	    }, {
+	        "url": "index.php?Link=Result Search&item=abcdaa454hkfg",
+	        "subject": "IS_Lab",
+	        "credit": 1
+	    }, {
+	        "url": "index.php?Link=Result Search&item=abcdaa453hkfg",
+	        "subject": "Image_Processing",
+	        "credit": 4
+	    }, {
+	        "url": "index.php?Link=Result Search&item=abcdaa452hkfg",
+	        "subject": "Image_Processing_Lab",
+	        "credit": 1
+	    }, {
+	        "url": "index.php?Link=Result Search&item=abcdaa451hkfg",
+	        "subject": "GIS",
+	        "credit": 4
+	    }, {
+	        "url": "index.php?Link=Result Search&item=abcdaa155hkfg",
+	        "subject": "Compiler_Design",
+	        "credit": 4
+	    }, {
+	        "url": "index.php?Link=Result Search&item=abcdaa450hkfg",
+	        "subject": "Cloud_Computing",
+	        "credit": 4
+	    }
+    ]
+}
