@@ -11,7 +11,7 @@ input_file_name = 'results.json'
 openFile =  open(input_file_name, 'r')
 inputFile = json.load(openFile)
 
-subject_wise_results = inputFile['subject_wise_results'] 
+subject_wise_results = inputFile['subject_wise_results']
 
 student_wise_results = inputFile['student_wise_results']
 
@@ -25,8 +25,22 @@ def index():
 
 @app.route('/test')
 def test():
-    print student_wise_results
-    return render_template('temp.html',student_wise_results=student_wise_results)
+    # print student_wise_results
+    subjects = [ x['sub'].replace('_'," ") for x in student_wise_results[0]['grades'] ]
+    # print subjects
+    return render_template('temp.html',subjects=subjects,student_wise_results=student_wise_results)
+
+
+@app.route('/res')
+def res():
+    # print student_wise_results
+    subjects = [ x['sub'].replace('_'," ") for x in student_wise_results[0]['grades'] ]
+    # print subjects
+    # print student_wise_results[0]
+    return render_template('res1.html',subjects=subjects,student_wise_results=student_wise_results)
+
+
+
 
 
 # @app.route('/<path:resource>')
@@ -38,4 +52,4 @@ def test():
 #     return "<strong>It's Alive!</strong>"
 
 if __name__ == '__main__':
-    app.run(debug=Trues)
+    app.run(debug=True)
