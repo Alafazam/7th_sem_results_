@@ -30,8 +30,8 @@ def test():
     return render_template('temp.html',subjects=subjects,student_wise_results=student_wise_results)
 
 
-@app.route('/res')
-def res():
+@app.route('/studentwiseresults')
+def studentwiseresults():
     # print student_wise_results
     subjects = [ x['sub'].replace('_'," ") for x in student_wise_results[0]['grades'] ]
     # print subjects
