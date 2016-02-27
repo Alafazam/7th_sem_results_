@@ -2,13 +2,12 @@ import os
 from datetime import datetime
 from flask import Flask, request, flash, url_for, redirect, \
      render_template, abort, send_from_directory
-import json
-
-
+import simplejson as json
+import codecs
 
 
 input_file_name = 'results.json'
-openFile =  open(input_file_name, 'r')
+openFile =  codecs.open(input_file_name, 'r',"utf-8" )
 inputFile = json.load(openFile)
 
 subject_wise_results = inputFile['subject_wise_results']
@@ -37,7 +36,9 @@ def res():
     subjects = [ x['sub'].replace('_'," ") for x in student_wise_results[0]['grades'] ]
     # print subjects
     # print student_wise_results[0]
-    return render_template('res1.html',subjects=subjects,student_wise_results=student_wise_results)
+    namesList = [x['name'] for x in student_wise_results]
+    rollList =  [x['rollno'] for x in student_wise_results]
+    return render_template('res1.html',subjects=subjects,student_wise_results=student_wise_results,namesList=namesList,rollList=rollList)
 
 
 

@@ -26,9 +26,27 @@
     </nav>
     <div class="section no-pad-bot" id="index-banner">
         <div class="container">
+            <style>
+            .search-wrapper i.material-icons {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                cursor: pointer;
+            }
+            
+            .search-wrapper {
+                box-shadow: 0px 0px 0px 0px;
+            }
+            </style>
+            <div class="row">
+                <div class="search-wrapper card">
+                    <input id="search"><i class="material-icons">search</i>
+                    <div class="search-results"></div>
+                </div>
+            </div>
             <div class="row">
                 {% for student in student_wise_results %}
-                <div class="col s6 m6">
+                <div class="col s6 m6" data-name="{{ student['name'] }}" data-rollno="{{ student['rollno'] }}">
                     <div class="card ">
                         <div class="card-content ">
                             <span class="card-title">{{ student['name'] }} <span class="badge">{{ student['rollno'] }}/12</span> </span>
@@ -74,6 +92,55 @@
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="static/js/materialize.js"></script>
     <script src="static/js/init.js"></script>
+    <script>
+    var namesList = [
+        // {% for name in namesList %}
+        '{{name}}',
+        // {% endfor %}
+    ];
+
+    var rollList = [
+        // {% for roll in rollList %}
+        '{{roll}}',
+        // {% endfor %}
+    ];
+
+    $(document).ready(function() {
+        $('#search').on('keyup', function() {
+            var value = $(this).val().toUpperCase();
+
+            if (value.length) {
+
+                if (!$.isNumeric(value) ) {
+                    for (var i = namesList.length - 1; i >= 0; i--) {
+                        if (namesList[i].indexOf(value)) {
+                            $("div[data-name='" + namesList[i] + "']").hide();
+                        } else {
+                            $("div[data-name='" + namesList[i] + "']").show();
+                        };
+                    };
+
+                } else {
+                    for (var i = rollList.length - 1; i >= 0; i--) {
+                        console.log(rollList[i].indexOf(value));
+                        if (rollList[i].indexOf(value)) {
+                            $("div[data-rollno='" + rollList[i] + "']").hide();
+                        } else {
+                            $("div[data-rollno='" + rollList[i] + "']").show();
+                        };
+                    };
+
+                }
+
+            } else {
+
+                for (var i = namesList.length - 1; i >= 0; i--) {
+                    $("div[data-name='" + namesList[i] + "']").show();
+                };
+            }
+        });
+    });
+    </script>
 </body>
 
 </html>
