@@ -9,10 +9,17 @@ import codecs
 input_file_name = 'results.json'
 openFile =  codecs.open(input_file_name, 'r',"utf-8" )
 inputFile = json.load(openFile)
-
 subject_wise_results = inputFile['subject_wise_results']
-
 student_wise_results = inputFile['student_wise_results']
+
+
+
+CS_input_file_name = 'CS_students_result.json'
+CS_openFile =  codecs.open(CS_input_file_name, 'r',"utf-8" )
+CS_inputFile = json.load(CS_openFile)
+CS_subject_wise_results = CS_inputFile['subject_wise_results']
+CS_student_wise_results = CS_inputFile['student_wise_results']
+
 
 
 app = Flask(__name__)
@@ -30,8 +37,8 @@ def test():
     return render_template('temp.html',subjects=subjects,student_wise_results=student_wise_results)
 
 
-@app.route('/studentwiseresults')
-def studentwiseresults():
+@app.route('/IT')
+def studentwiseresults_IT():
     # print student_wise_results
     subjects = [ x['sub'].replace('_'," ") for x in student_wise_results[0]['grades'] ]
     # print subjects
@@ -40,6 +47,15 @@ def studentwiseresults():
     rollList =  [x['rollno'] for x in student_wise_results]
     return render_template('res1.html',subjects=subjects,student_wise_results=student_wise_results,namesList=namesList,rollList=rollList)
 
+@app.route('/CS')
+def studentwiseresults_CS():
+    # print student_wise_results
+    subjects = [ x['sub'].replace('_'," ") for x in CS_student_wise_results[0]['grades'] ]
+    # print subjects
+    # print student_wise_results[0]
+    namesList = [x['name'] for x in CS_student_wise_results]
+    rollList =  [x['rollno'] for x in CS_student_wise_results]
+    return render_template('res1.html',subjects=subjects,student_wise_results=CS_student_wise_results,namesList=namesList,rollList=rollList)
 
 
 

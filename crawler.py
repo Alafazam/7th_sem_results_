@@ -20,7 +20,7 @@ POINTER = {'NA':-1,'F': 0, 'C': 5, 'C+': 6, 'B': 7, 'B+': 8, 'A': 9, 'A+': 10}
 
 
 
-input_file_name = 'students.json'
+input_file_name = 'CS_students.json'
 openFile =  open(input_file_name, 'r')
 inputFile = json.load(openFile)
 
@@ -33,8 +33,8 @@ print "%d students found." % total_students
 print "%d subjects." % toal_subjects
 student_count = 1
 
-# students = students[1:2]
-# subjects = subjects[:1]
+# students = students[3:1]
+# subjects = subjects[7:]
 
 student_results = []
 subject_wise_results = {}
@@ -63,14 +63,16 @@ for student in students:
 		soup = BeautifulSoup(t.content, 'html.parser')
 		bogie = soup.find_all('td')
 		grade_obtained = 'NA'
+		# print bogie
 
 		if len(bogie):
 			grade_obtained = str( bogie[len(bogie)-1].string)
 			# another hacky attempt
-			if (not grade_obtained) or grade_obtained == 'None':
-				grade_obtained = str(soup.find_all('td', text=re.compile('Grade'))[0].next_sibling.string)
+			if (not grade_obtained) or grade_obtained == 'None' or grade_obtained == ' ':
+				grade_obtained = str(soup.find_all('td', text=re.compile('grade|GRADE|Grade'))[0].next_sibling.string)
+				# print grade_obtained
 
-			if (not grade_obtained) or grade_obtained == 'None':
+			if (not grade_obtained) or grade_obtained == 'None' or grade_obtained == ' ':
 				grade_obtained = 'NA'
 
 		# print {'grade':grade_obtained,'sub': subject_name, 'pointer' : POINTER[grade_obtained] }

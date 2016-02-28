@@ -1,10 +1,11 @@
 {
-    "students": [{
+    "students": [
+    {
         "rollno": 302,
-        "name": "	AVICHAL GUPTA"
+        "name": "AVICHAL GUPTA"
     }, {
         "rollno": 340,
-        "name": "	SAMEER IBRAHIM"
+        "name": "SAMEER IBRAHIM"
     }, {
         "rollno": 400,
         "name": "ROHITAS KUMAR"
@@ -172,33 +173,32 @@
         "name": "Viswajeet Singh"
     }],
 
-
     "subjects": [{
-        "url": "index.php?Link=Result Search&amp;item=abcdaa400hkfg",
-        "sub": "Numerical Methods"
+        "url": "index.php?Link=Result Search&item=abcdaa400hkfg",
+        "subject": "Numerical Methods"
     }, {
-        "url": "index.php?Link=Result Search&amp;item=abcdaa182hkfg",
-        "sub": "Network Security Lab"
+        "url": "index.php?Link=Result Search&item=abcdaa182hkfg",
+        "subject": "Network Security Lab"
     }, {
-        "url": "index.php?Link=Result Search&amp;item=abcdaa171hkfg",
-        "sub": "Network Security"
+        "url": "index.php?Link=Result Search&item=abcdaa171hkfg",
+        "subject": "Network Security"
     }, {
-        "url": "index.php?Link=Result Search&amp;item=abcdaa160hkfg",
-        "sub": "Advanced DBMS"
+        "url": "index.php?Link=Result Search&item=abcdaa160hkfg",
+        "subject": "Advanced DBMS"
     }, {
-        "url": "index.php?Link=Result Search&amp;item=abcdaa154hkfg",
-        "sub": "Compiler Design Lab"
+        "url": "index.php?Link=Result Search&item=abcdaa154hkfg",
+        "subject": "Compiler Design Lab"
     }, {
-        "url": "index.php?Link=Result Search&amp;item=abcdaa153hkfg",
-        "sub": "Compiler Design"
+        "url": "index.php?Link=Result Search&item=abcdaa153hkfg",
+        "subject": "Compiler Design"
     }, {
-        "url": "index.php?Link=Result Search&amp;item=abcdaa152hkfg",
-        "sub": "Advanced Algorithms"
+        "url": "index.php?Link=Result Search&item=abcdaa152hkfg",
+        "subject": "Advanced Algorithms"
     }, {
-        "url": "index.php?Link=Result Search&amp;item=abcdaa130hkfg",
-        "sub": "Python"
+        "url": "index.php?Link=Result Search&item=abcdaa130hkfg",
+        "subject": "Python"
     }, {
-        "url": "index.php?Link=Result Search&amp;item=abcdaa126hkfg",
-        "sub": "PHP"
+        "url": "index.php?Link=Result Search&item=abcdaa126hkfg",
+        "subject": "PHP"
     }]
 }
