@@ -24,7 +24,7 @@ input_file_name = 'students.json'
 openFile =  open(input_file_name, 'r')
 inputFile = json.load(openFile)
 
-students = inputFile['students'] 
+students = inputFile['students']
 subjects = inputFile['subjects']
 
 total_students = len(students)
@@ -58,24 +58,24 @@ for student in students:
 	grades = []
 	for subject in subjects:
 		subject_name = str(subject['subject'])
-		print "Querying for %s" % (subject_name)		
+		print "Querying for %s" % (subject_name)
 		t = requests.post("http://bcsociety.org/nit/" + subject['url'], data={'rollno': rollno})
 		soup = BeautifulSoup(t.content, 'html.parser')
 		bogie = soup.find_all('td')
 		grade_obtained = 'NA'
-		
+
 		if len(bogie):
 			grade_obtained = str( bogie[len(bogie)-1].string)
 			# another hacky attempt
 			if (not grade_obtained) or grade_obtained == 'None':
 				grade_obtained = str(soup.find_all('td', text=re.compile('Grade'))[0].next_sibling.string)
-			
-			if (not grade_obtained) or grade_obtained == 'None': 
+
+			if (not grade_obtained) or grade_obtained == 'None':
 				grade_obtained = 'NA'
 
 		# print {'grade':grade_obtained,'sub': subject_name, 'pointer' : POINTER[grade_obtained] }
 		grades.append({'grade':grade_obtained,'sub': subject_name, 'pointer' : POINTER[grade_obtained]})
-		subject_wise_results[subject_name].append({'rollno': rollno, 'grade': grade_obtained, 'pointer' : POINTER[grade_obtained], 'name' : name })			
+		subject_wise_results[subject_name].append({'rollno': rollno, 'grade': grade_obtained, 'pointer' : POINTER[grade_obtained], 'name' : name })
 		# {'rollno': rollno, 'grade': grade_obtained, 'pointer' : POINTER[grade_obtained], 'name' : name }
 	student_result['grades'] = grades
 	student_results.append(student_result)
@@ -88,7 +88,7 @@ data = {}
 data['student_wise_results'] = student_results
 data['subject_wise_results'] = subject_wise_results
 
-with open('results.json', 'w') as outfile:
+with open(input_file_name.replace(".json",'_result.json'), 'w') as outfile:
     json.dump(data, outfile)
 
-print "all students processed"
+print "all student's data processed"

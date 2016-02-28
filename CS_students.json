@@ -170,5 +170,35 @@
     }, {
         "rollno": 181,
         "name": "Viswajeet Singh"
+    }],
+
+
+    "subjects": [{
+        "url": "index.php?Link=Result Search&amp;item=abcdaa400hkfg",
+        "sub": "Numerical Methods"
+    }, {
+        "url": "index.php?Link=Result Search&amp;item=abcdaa182hkfg",
+        "sub": "Network Security Lab"
+    }, {
+        "url": "index.php?Link=Result Search&amp;item=abcdaa171hkfg",
+        "sub": "Network Security"
+    }, {
+        "url": "index.php?Link=Result Search&amp;item=abcdaa160hkfg",
+        "sub": "Advanced DBMS"
+    }, {
+        "url": "index.php?Link=Result Search&amp;item=abcdaa154hkfg",
+        "sub": "Compiler Design Lab"
+    }, {
+        "url": "index.php?Link=Result Search&amp;item=abcdaa153hkfg",
+        "sub": "Compiler Design"
+    }, {
+        "url": "index.php?Link=Result Search&amp;item=abcdaa152hkfg",
+        "sub": "Advanced Algorithms"
+    }, {
+        "url": "index.php?Link=Result Search&amp;item=abcdaa130hkfg",
+        "sub": "Python"
+    }, {
+        "url": "index.php?Link=Result Search&amp;item=abcdaa126hkfg",
+        "sub": "PHP"
     }]
 }
