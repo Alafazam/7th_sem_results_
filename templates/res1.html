@@ -19,7 +19,7 @@
                 <!-- <li><a href="#">IT subjects wise results</a></li> -->
             </ul>
             <ul id="nav-mobile" class="side-nav">
-                <li><a href="#">IT Students wise results</a></li>
+                <li><a href="/studentwiseresults">7th IT Students wise results</a></li>
             </ul>
             <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
         </div>
@@ -36,6 +36,13 @@
 
             .search-wrapper {
                 box-shadow: 0px 0px 0px 0px;
+            }
+
+            tr:nth-last-child(2) {
+                border-bottom: 1px solid #d0d0d0;
+            }
+            tr:nth-last-child(1) > td {
+                padding-top: 30px;
             }
             </style>
             <div class="row">
@@ -70,8 +77,13 @@
                                         <td>NA</td>
                                     </tr>
                                     {% endif%} {% endfor %}
+                                    <tr>
+                                        <td><b>GPA</b></td>
+                                        <td>8.1</td>
+                                    </tr>
                                 </tbody>
                             </table>
+                             <!-- <p href="#!" class="collection-item">GPA<span class="badge">8.1</span></p> -->
                             <!-- <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>   -->
                         </div>
                     </div>
