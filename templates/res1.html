@@ -1,34 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
-    <title>Results</title>
-    <!-- CSS  -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
-    <link href="static/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
-</head>
-
-<body>
-    <nav class="red darken-1" role="navigation">
-        <div class="nav-wrapper container"><a id="logo-container" href="/" class="brand-logo">Home</a>
-            <ul class="right hide-on-med-and-down">
-                <li><a href="/IT">7th IT</a></li>
-                <li><a href="/CS">7th CS</a></li>
-                <!-- <li><a href="#">IT subjects wise results</a></li> -->
-            </ul>
-            <ul id="nav-mobile" class="side-nav">
-                <li><a href="/IT">7th IT</a></li>
-                <li><a href="/CS">7th CS</a></li>
-            </ul>
-            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-        </div>
-    </nav>
-    <div class="section no-pad-bot" id="index-banner">
-        <div class="container">
-            <style>
+{% extends "layout.html" %} {% block content %}
+<div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+        <style>
             .search-wrapper i.material-icons {
                 position: absolute;
                 top: 10px;
@@ -43,70 +16,73 @@
             tr:nth-last-child(2) {
                 border-bottom: 1px solid #d0d0d0;
             }
+
             tr:nth-last-child(1) > td {
                 padding-top: 30px;
             }
-            </style>
-            <div class="row">
-                <div class="search-wrapper card">
-                    <input id="search"><i class="material-icons">search</i>
-                    <div class="search-results"></div>
-                </div>
-            </div>
-            <div class="row">
-                {% for student in student_wise_results %}
-                <div class="col s12 m6" data-name="{{ student['name'] }}" data-rollno="{{ student['rollno'] }}">
-                    <div class="card ">
-                        <div class="card-content ">
-                            <span class="card-title">{{ student['name'] }} <span class="badge">{{ student['rollno'] }}/12</span> </span>
-                            <table class='highlight centered  '>
-                                <thead>
-                                    <tr>
-                                        <!-- <th data-field="{{ subject }}">{{ subject }}</th> -->
-                                        <th>Subject</th>
-                                        <th>Grade</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {% for grade in student['grades'] %} {% if grade['pointer'] != -1 %}
-                                    <tr>
-                                        <td>{{ grade['sub'].replace('_'," ") }}</td>
-                                        <td>{{ grade['pointer'] }}</td>
-                                    </tr>
-                                    {% endif%} {% if grade['pointer'] == -1 %}
-                                    <tr>
-                                        <td>{{ grade['sub'].replace('_'," ") }}</td>
-                                        <td>NA</td>
-                                    </tr>
-                                    {% endif%} {% endfor %}
-                                    <tr>
-                                        <td><b> </b></td>
-                                        <td>  </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                             <!-- <p href="#!" class="collection-item">GPA<span class="badge">8.1</span></p> -->
-                            <!-- <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>   -->
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
+        </style>
+        <div class="row">
+            <div class="search-wrapper card">
+                <input id="search"><i class="material-icons">search</i>
+                <div class="search-results"></div>
             </div>
         </div>
+        <div class="row">
+            {% for student in student_wise_results %}
+            <div class="col s12 m6" data-name="{{ student['name'] }}" data-rollno="{{ student['rollno'] }}">
+                <div class="card ">
+                    <div class="card-content ">
+                        <span class="card-title">{{ student['name'] }} <span class="badge">{{ student['rollno'] }}/12</span> </span>
+                        <table class='highlight centered  '>
+                            <thead>
+                                <tr>
+                                    <!-- <th data-field="{{ subject }}">{{ subject }}</th> -->
+                                    <th>Subject</th>
+                                    <th>Grade</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% set gpa_count = [] %}
+                                {% set credits_count = [] %}
+                                {% for grade in student['grades'] %}
+                                {% if grade['pointer'] != -1 %}
+                                <tr>
+                                    <td>{{ grade['sub'].replace('_'," ") }}</td>
+                                    <td>{{ grade['pointer'] }}</td>
+                                    <!-- {% if credits %} -->
+                                    <!-- {% if gpa_count.append((credits[grade['sub']]) * grade['pointer']) %}{% endif %} -->
+                                    <!-- {% if credits_count.append((credits[grade['sub']])) %} {% endif %}-->
+                                    <!-- {% endif %} -->
+                                </tr>
+                                {% endif %}
+                                {% if grade['pointer'] == -1 %}
+                                <tr>
+                                    <td>{{ grade['sub'].replace('_'," ") }}</td>
+                                    <td>NA</td>
+                                </tr>
+                                {% endif %} {% endfor %}
+                                <tr>
+                                    <td><b>GPA</b></td>
+                                    <!-- {% if credits %} -->
+                                    <td>{{ ((gpa_count|sum())/credits_count|sum())|round(3)}} </td>
+                                    <!-- {% else %}  -->
+                                    <td>...</td>
+                                    <!-- {% endif %} -->
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
     </div>
-    <!--   <footer class="page-footer deep-purple darken-4">
-    <div class="footer-copyright">
-      <div class="container">
-      Made by <a class="deep-purple-text text-lighten-3" href="http://alafazam.com">Alaf Azam Khan</a>
-      </div>
-    </div>
-  </footer>
- -->
-    <!--  Scripts-->
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="static/js/materialize.js"></script>
-    <script src="static/js/init.js"></script>
-    <script>
+</div>
+{% endblock %}
+
+
+{% block footer_sripts %}
+<script>
     var namesList = [
         // {% for name in namesList %}
         '{{name}}',
@@ -125,7 +101,7 @@
 
             if (value.length) {
 
-                if (!$.isNumeric(value) ) {
+                if (!$.isNumeric(value)) {
                     for (var i = namesList.length - 1; i >= 0; i--) {
                         if (namesList[i].indexOf(value)) {
                             $("div[data-name='" + namesList[i] + "']").hide();
@@ -154,7 +130,5 @@
             }
         });
     });
-    </script>
-</body>
-
-</html>
+</script>
+{% endblock %}

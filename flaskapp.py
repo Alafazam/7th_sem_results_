@@ -12,6 +12,12 @@ inputFile = json.load(openFile)
 subject_wise_results = inputFile['subject_wise_results']
 student_wise_results = inputFile['student_wise_results']
 
+ITStudentsFile =  codecs.open('students.json', 'r',"utf-8" )
+ITStudentsFileinput = json.load(ITStudentsFile)
+IT_subjects = ITStudentsFileinput['subjects']
+IT_credits = {}
+for x in IT_subjects:
+    IT_credits[ x['subject'] ] = x['credit']
 
 
 CS_input_file_name = 'CS_students_result.json'
@@ -32,20 +38,20 @@ def index():
 @app.route('/test')
 def test():
     # print student_wise_results
-    subjects = [ x['sub'].replace('_'," ") for x in student_wise_results[0]['grades'] ]
+    # subjects = [ x['sub'].replace('_'," ") for x in student_wise_results[0]['grades'] ]
     # print subjects
-    return render_template('temp.html',subjects=subjects,student_wise_results=student_wise_results)
+    return render_template('temp.html',credits=IT_credits,student_wise_results=student_wise_results)
 
 
 @app.route('/IT')
 def studentwiseresults_IT():
     # print student_wise_results
-    subjects = [ x['sub'].replace('_'," ") for x in student_wise_results[0]['grades'] ]
+    # subjects = [ x['sub'].replace('_'," ") for x in student_wise_results[0]['grades'] ]
     # print subjects
     # print student_wise_results[0]
     namesList = [x['name'] for x in student_wise_results]
     rollList =  [x['rollno'] for x in student_wise_results]
-    return render_template('res1.html',subjects=subjects,student_wise_results=student_wise_results,namesList=namesList,rollList=rollList)
+    return render_template('res1.html',credits=IT_credits,student_wise_results=student_wise_results,namesList=namesList,rollList=rollList)
 
 @app.route('/CS')
 def studentwiseresults_CS():
