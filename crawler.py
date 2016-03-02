@@ -5,21 +5,11 @@ import json
 import re
 
 # this files crawles our 7th semester result.
-
-
-
-
 # r = requests.post("http://bcsociety.org/nit/index.php?Link=Result Details", data={'class':'IT','Semester':'7','Batch': '2012','hi':'abcdaa455hkfg','rollno':'552'})
 # pprint.pprint(r.content)
-
 # data={'item':'abcdaa455hkfg','Link':'Result Search'},
-
 # pprint.pprint(t.content)
-
 POINTER = {'NA':-1,'F': 0, 'C': 5, 'C+': 6, 'B': 7, 'B+': 8, 'A': 9, 'A+': 10}
-
-
-
 input_file_name = 'CS_students.json'
 openFile =  open(input_file_name, 'r')
 inputFile = json.load(openFile)
